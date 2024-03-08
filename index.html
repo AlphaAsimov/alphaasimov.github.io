@@ -13873,16 +13873,19 @@
           </li>
 
           <li class="nav-item section-title">
-            <a class="nav-link scrollto" href="#section-4">Integrations</a>
+            <a class="nav-link scrollto" href="#section-4">APIs</a>
             <ul class="nav flex-column mt-2 lvl2">
               <li class="nav-item">
-                <a class="nav-link scrollto" href="#item-4-1">Section Item 4.1</a>
+                <a class="nav-link scrollto" href="#item-4-1">Request Headers</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link scrollto" href="#item-4-2">Section Item 4.2</a>
+                <a class="nav-link scrollto" href="#item-4-2">Create Delivery Request</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link scrollto" href="#item-4-3">Section Item 4.3</a>
+                <a class="nav-link scrollto" href="#item-4-3">Get Delivery Details</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link scrollto" href="#item-4-4">Cancel Delivery</a>
               </li>
             </ul>
           </li>
@@ -13895,15 +13898,15 @@
         <article class="docs-article" id="section-1">
           <h1 class="docs-heading">Introduction</h1>
           <section class="docs-intro">
-            <p>This API documentation will guide you through every aspect of integrating with our order creation
+            <p>This API documentation will guide you through every aspect of integrating with our delivery creation
               system. It provides detailed information on authentication, request and response formats, and available
               endpoints. Additionally, you will find code examples and best practices to help you get started quickly
               and efficiently.</p>
             <ul class="mt-3 mb-5">
               <li class="ms-3">Integrate your application with APIs and tracking webhook.</li>
-              <li class="ms-3">Retrieve the details of an order.</li>
+              <li class="ms-3">Retrieve the details of an delivery.</li>
               <li class="ms-3">Push delivery status notifications to you or others in your organization.</li>
-              <li class="ms-3">Cancel an order</li>
+              <li class="ms-3">Cancel an in-progress delivery</li>
             </ul>
           </section>
         </article>
@@ -14144,49 +14147,57 @@
               </table>
             </div>
           </section>
-
         </article>
 
 
         <article class="docs-article" id="section-4">
-          <header class="docs-header">
-            <h1 class="docs-heading">Intergrations</h1>
-            <section class="docs-intro">
-              <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus
-                condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh
-                convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce
-                in malesuada odio.</p>
-            </section>
-          </header>
-
-
-          <section class="docs-section" id="item-4-1">
-            <h2 class="section-heading">Section Item 4.1</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+          <h1 class="docs-heading">APIs</h1>
+          <section class="docs-intro" id="item-4-1">
+            <h2 class="section-heading">Request Headers</h2>
+            <p>Every request to GrabExpress API has to have the following request headers.</p>
+            <div class="table-responsive my-4">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>HTTP Header</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>Content-Type</code></td>
+                    <td>yes</td>
+                    <td><code>application/json</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>Authorization</code></td>
+                    <td>yes</td>
+                    <td>OAuth2 Bearer token i.e. <code>Bearer &lt;your access token&gt;</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </section>
 
-
-          <section class="docs-section" id="item-4-2">
-            <h2 class="section-heading">Section Item 4.2</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+          <section class="docs-intro" id="item-4-2">
+            <h2 class="section-heading">Create Delivery Request</h2>
+            <p>Request for delivery service.</p>
+            <ul class="mt-3 mb-5">
+            </ul>
           </section>
 
+          <section class="docs-intro" id="item-4-3">
+            <h2 class="section-heading">Get Delivery Details</h2>
+            <p>Get information about an delivery.</p>
+            <ul class="mt-3 mb-5">
+            </ul>
+          </section>
 
-          <section class="docs-section" id="item-4-3">
-            <h2 class="section-heading">Section Item 4.3</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+          <section class="docs-intro" id="item-4-4">
+            <h2 class="section-heading">Cancel Delivery</h2>
+            <p>To cancel an in-progress delivery, you must have the deliveryID value from when the delivery was created.
+            </p>
           </section>
 
         </article>
