@@ -14183,21 +14183,341 @@
           <section class="docs-intro" id="item-4-2">
             <h2 class="section-heading">Create Delivery Request</h2>
             <p>Request for delivery service.</p>
+            <h4>Endpoint URL</h4>
             <ul class="mt-3 mb-5">
+              <li class="ms-3">For testing, use staging URL
+                <code>https://dev-api.alphaasimov.com/api/app/partner-deliveries</code>
+              </li>
+              <li class="ms-3">For production, use production URL
+                <code>https://api.alphaasimov.com/api/app/partner-deliveries</code>
+              </li>
             </ul>
+            <h4>Request Body Parameters</h4>
+            <div class="table-responsive my-4">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>externalId</code></td>
+                    <td>string</td>
+                    <td>yes</td>
+                    <td>An order’s unique identifier. OrderID represents object(s) being delivered. i.e.
+                      <code>GE-00001</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>note</code></td>
+                    <td>string</td>
+                    <td>no</td>
+                    <td>Any additional info.</td>
+                  </tr>
+                  <tr>
+                    <td><code>sender</code></td>
+                    <td>object</td>
+                    <td>yes</td>
+                    <td>JSON Object containing sender info</td>
+                  </tr>
+                  <tr>
+                    <td><code>sender.name</code></td>
+                    <td>string</td>
+                    <td>yes</td>
+                    <td>Sender’s name</td>
+                  </tr>
+                  <tr>
+                    <td><code>sender.phone</code></td>
+                    <td>string</td>
+                    <td>yes</td>
+                    <td>Sender’s phone</td>
+                  </tr>
+                  <tr>
+                    <td><code>sender.address</code></td>
+                    <td>string</td>
+                    <td>yes</td>
+                    <td>Sender’s address</td>
+                  </tr>
+                  <tr>
+                    <td><code>sender.coordinates</code></td>
+                    <td>object</td>
+                    <td>yes</td>
+                    <td>JSON Object holding destination geolocation i.e. { "latitude": 1.2345876, "longitude": 3.4567098
+                      }</td>
+                  </tr>
+                  <tr>
+                    <td><code>sender.coordinates.latitude</code></td>
+                    <td>float64</td>
+                    <td>yes</td>
+                    <td>Latitude coordinates of the destination address i.e. <code>1.2345876</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>sender.coordinates.longitude</code></td>
+                    <td>float64</td>
+                    <td>yes</td>
+                    <td>Longitude coordinates of the destination address i.e. <code>3.4567098</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>sender.note</code></td>
+                    <td>string</td>
+                    <td>no</td>
+                    <td>Any additional info.</td>
+                  </tr>
+                  <tr>
+                    <td><code>recipient</code></td>
+                    <td>object</td>
+                    <td>yes</td>
+                    <td>JSON Object containing recipient info</td>
+                  </tr>
+                  <tr>
+                    <td><code>recipient.name</code></td>
+                    <td>string</td>
+                    <td>yes</td>
+                    <td>Recipient’s name</td>
+                  </tr>
+                  <tr>
+                    <td><code>recipient.phone</code></td>
+                    <td>string</td>
+                    <td>yes</td>
+                    <td>Recipient’s phone</td>
+                  </tr>
+                  <tr>
+                    <td><code>recipient.address</code></td>
+                    <td>string</td>
+                    <td>yes</td>
+                    <td>Recipient’s address</td>
+                  </tr>
+                  <tr>
+                    <td><code>recipient.coordinates</code></td>
+                    <td>object</td>
+                    <td>yes</td>
+                    <td>JSON Object holding destination geolocation i.e. { "latitude": 1.2345876, "longitude": 3.4567098
+                      }</td>
+                  </tr>
+                  <tr>
+                    <td><code>recipient.coordinates.latitude</code></td>
+                    <td>float64</td>
+                    <td>yes</td>
+                    <td>Latitude coordinates of the destination address i.e. <code>1.2345876</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>recipient.coordinates.longitude</code></td>
+                    <td>float64</td>
+                    <td>yes</td>
+                    <td>Longitude coordinates of the destination address i.e. <code>3.4567098</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>recipient.note</code></td>
+                    <td>string</td>
+                    <td>no</td>
+                    <td>Any additional info.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="docs-code-block">
+              <pre class="shadow-lg rounded"><code class="language-shell hljs">curl -X 'POST' \
+  'https://dev-api.alphaasimov.com/api/app/partner-deliveries' \
+  -H 'accept: text/plain' \
+  -H 'Content-Type: application/json' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -d '{
+  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "creationTime": "2024-03-11T09:59:38.995Z",
+  "creatorId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "lastModificationTime": "2024-03-11T09:59:38.995Z",
+  "lastModifierId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "isDeleted": true,
+  "deleterId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "deletionTime": "2024-03-11T09:59:38.995Z",
+  "externalId": "string",
+  "sender": {
+    "coordinates": {
+      "latitude": 0,
+      "longitude": 0
+    },
+    "address": "string",
+    "phone": "string",
+    "name": "string",
+    "note": "string"
+  },
+  "recipient": {
+    "coordinates": {
+      "latitude": 0,
+      "longitude": 0
+    },
+    "address": "string",
+    "phone": "string",
+    "name": "string",
+    "note": "string"
+  },
+  "note": "string"
+}'</code></pre>
+            </div>
+            <h4>Response Example</h4>
+            <div class="docs-code-block">
+              <pre class="shadow-lg rounded"><code class="language-shell hljs">{
+  "code": "AAAJKN0001",
+  "status": 100,
+  "note": "note",
+  "sender": {
+      "location": {
+          "latitude": 20.96161,
+          "longitude": 105.74754
+      },
+      "address": "Giao Haaaang",
+      "phoneNumber": "1234455",
+      "name": "A",
+      "note":"note",
+  },
+  "recipient": {
+      "location": {
+          "latitude": 20.96108,
+          "longitude": 105.74862
+      },
+      "address": "Lay Haaaaaang",
+      "phoneNumber": "12344123",
+      "name": "B",
+      "note": "note",
+  },
+  "externalId": "00000000-0000-0000-0000-000000000000",
+  "isDeleted": false,
+  "deletionTime": null,
+  "lastModificationTime": "2024-02-20T04:54:11.884Z",
+  "creationTime": "2024-02-20T04:53:57.093Z",
+  "id": "a7abc9fc-0eec-6a7f-8165-3a10d709e2e5"
+}</code></pre>
+            </div>
           </section>
 
           <section class="docs-intro" id="item-4-3">
             <h2 class="section-heading">Get Delivery Details</h2>
             <p>Get information about an delivery.</p>
+            <h4>Endpoint URL</h4>
             <ul class="mt-3 mb-5">
+              <li class="ms-3">For testing, use staging URL
+                <code>https://dev-api.alphaasimov.com/api/app/partner-deliveries/{deliveryID}</code>
+              </li>
+              <li class="ms-3">For production, use production URL
+                <code>https://api.alphaasimov.com/api/app/partner-deliveries/{deliveryID}</code>
+              </li>
             </ul>
+            <h4>Request Path Parameters</h4>
+            <div class="table-responsive my-4">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>deliveryID</td>
+                    <td>string</td>
+                    <td>yes</td>
+                    <td>Alpha Asimov’s unique delivery id returned when delivery request was made i.e
+                      <code>AAAJKN0001</code>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <h4>Response Example</h4>
+            <div class="docs-code-block">
+              <pre class="shadow-lg rounded"><code class="language-shell hljs">{
+  "code": "AAAJKN0001",
+  "status": 100,
+  "note": "note",
+  "sender": {
+      "location": {
+          "latitude": 20.96161,
+          "longitude": 105.74754
+      },
+      "address": "Giao Haaaang",
+      "phoneNumber": "1234455",
+      "name": "A",
+      "note":"note",
+  },
+  "recipient": {
+      "location": {
+          "latitude": 20.96108,
+          "longitude": 105.74862
+      },
+      "address": "Lay Haaaaaang",
+      "phoneNumber": "12344123",
+      "name": "B",
+      "note": "note",
+  },
+  "externalId": "00000000-0000-0000-0000-000000000000",
+  "isDeleted": false,
+  "deletionTime": null,
+  "lastModificationTime": "2024-02-20T04:54:11.884Z",
+  "creationTime": "2024-02-20T04:53:57.093Z",
+  "id": "a7abc9fc-0eec-6a7f-8165-3a10d709e2e5"
+}</code></pre>
+            </div>
           </section>
 
           <section class="docs-intro" id="item-4-4">
             <h2 class="section-heading">Cancel Delivery</h2>
             <p>To cancel an in-progress delivery, you must have the deliveryID value from when the delivery was created.
             </p>
+            <h4>Endpoint URL</h4>
+            <ul class="mt-3 mb-5">
+              <li class="ms-3">For testing, use staging URL
+                <code>https://dev-api.alphaasimov.com/api/app/partner-deliveries/{deliveryID}</code>
+              </li>
+              <li class="ms-3">For production, use production URL
+                <code>https://api.alphaasimov.com/api/app/partner-deliveries/{deliveryID}</code>
+              </li>
+            </ul>
+            <h4>Request Path Parameters</h4>
+            <div class="table-responsive my-4">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>deliveryID</td>
+                    <td>string</td>
+                    <td>yes</td>
+                    <td>Alpha Asimov’s unique delivery id returned when delivery request was made i.e
+                      <code>AAAJKN0001</code>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <h4>Response Parameters</h4>
+            <div class="table-responsive my-4">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Code</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>204</td>
+                    <td>Successful. No content returned.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </section>
 
         </article>
@@ -14233,12 +14553,6 @@
                 <ul class="mt-3 mb-5">
                   <li class="ms-3">Added documentation for the partner account setup and configuration</li>
                   <li class="ms-3">Added information about the authentication method</li>
-                  <!--<ul>
-                      <li class="ms-3">Lorem ipsum dolor sit amet</li>
-                      <li class="ms-3">Lorem ipsum dolor sit amet</li>
-                      <li class="ms-3">Lorem ipsum dolor sit amet</li>
-                    </ul>
-                    <li class="ms-3">Lorem ipsum dolor sit amet</li>-->
                 </ul>
               </div>
               <!--end col-->
