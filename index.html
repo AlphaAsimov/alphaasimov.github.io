@@ -13879,13 +13879,16 @@
                 <a class="nav-link scrollto" href="#item-4-1">Request Headers</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link scrollto" href="#item-4-2">Create Delivery Request</a>
+                <a class="nav-link scrollto" href="#item-4-2">HTTP Response codes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link scrollto" href="#item-4-3">Get Delivery Details</a>
+                <a class="nav-link scrollto" href="#item-4-3">Create Delivery Request</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link scrollto" href="#item-4-4">Cancel Delivery</a>
+                <a class="nav-link scrollto" href="#item-4-4">Get Delivery Details</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link scrollto" href="#item-4-5">Cancel Delivery</a>
               </li>
             </ul>
           </li>
@@ -14181,6 +14184,70 @@
           </section>
 
           <section class="docs-intro" id="item-4-2">
+            <h2 class="section-heading">HTTP Response codes</h2>
+            <div class="table-responsive my-4">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Code</th>
+                    <th>Reason</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>200 OK</td>
+                    <td>When request is as per expectation (Happy path)</td>
+                  </tr>
+                  <tr>
+                    <td>204 No Content</td>
+                    <td>When request is as per expectation (Happy path)</td>
+                  </tr>
+                  <tr>
+                    <td>400 Bad Request</td>
+                    <td>Bad Request</td>
+                  </tr>
+                  <tr>
+                    <td>401 Unauthorized</td>
+                    <td>Unauthorized</td>
+                  </tr>
+                  <tr>
+                    <td>403 Forbidden</td>
+                    <td>Forbidden</td>
+                  </tr>
+                  <tr>
+                    <td>404 Not Found</td>
+                    <td>The specified resource does not exist</td>
+                  </tr>
+                  <tr>
+                    <td>409 Conflict</td>
+                    <td>Unable to create a delivery</td>
+                  </tr>
+                  <tr>
+                    <td>429 Too Many Requests</td>
+                    <td>Too many requests</td>
+                  </tr>
+                  <tr>
+                    <td>500 Internal Server Error</td>
+                    <td>A system or application error occurred. Although the client appears to provide a correct
+                      request, something unexpected occurred on the server. You may retry the request in this case</td>
+                  </tr>
+                  <tr>
+                    <td>503 Service Unavailable</td>
+                    <td>The server cannot handle the request for a service due to temporary maintenance. You may retry a
+                      little later in this case.</td>
+                  </tr>
+                  <tr>
+                    <td>504 Gateway Timeout</td>
+                    <td>The server cannot handle the request for a service due to loading of lots of data. You may retry
+                      a little later or shorten the time interval in this case.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+
+          <section class="docs-intro" id="item-4-3">
             <h2 class="section-heading">Create Delivery Request</h2>
             <p>Request for delivery service.</p>
             <h4>Endpoint URL</h4>
@@ -14394,7 +14461,7 @@
             </div>
           </section>
 
-          <section class="docs-intro" id="item-4-3">
+          <section class="docs-intro" id="item-4-4">
             <h2 class="section-heading">Get Delivery Details</h2>
             <p>Get information about an delivery.</p>
             <h4>Endpoint URL</h4>
@@ -14465,7 +14532,7 @@
             </div>
           </section>
 
-          <section class="docs-intro" id="item-4-4">
+          <section class="docs-intro" id="item-4-5">
             <h2 class="section-heading">Cancel Delivery</h2>
             <p>To cancel an in-progress delivery, you must have the deliveryID value from when the delivery was created.
             </p>
